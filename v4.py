@@ -57,7 +57,7 @@ def split_video():
         save_path.mkdir(parents=True)
 
     # Get the video duration using ffprobe
-    ffprobe_command = f"ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {input_path}"
+    ffprobe_command = f"ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 \"{input_path}\""
     duration_str = subprocess.check_output(ffprobe_command, shell=True).decode().strip()
     total_duration = float(duration_str)
 
